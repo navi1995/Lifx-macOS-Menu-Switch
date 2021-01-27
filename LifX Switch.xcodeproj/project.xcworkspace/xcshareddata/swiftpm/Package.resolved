@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Lifx",
+        "repositoryURL": "https://github.com/glennschmidt/swift-lifx.git",
+        "state": {
+          "branch": null,
+          "revision": "dd063fb9812ab44d2e5937117bb9dbdbd938250e",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
