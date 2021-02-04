@@ -25,18 +25,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	let client = try! LifxLanClient()
 	
 	override init() {
-		client.startRefreshing()
+		client.discover()
 	}
 	
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		
-		let contentView = ContentView()
+		let contentView = ContentView(client: client)
 			.environmentObject(client.state)
 		
 		popover.behavior = .transient
 		popover.animates = false
 		popover.contentViewController = NSViewController()
 		popover.contentViewController?.view = NSHostingView(rootView: contentView)
+		popover.contentViewController?.preferredContentSize = CGSize(width: 348, height: 400)
 		statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 		statusBarItem?.button?.title = "Lifx"
 		statusBarItem?.button?.action = #selector(AppDelegate.togglePopover(_:))

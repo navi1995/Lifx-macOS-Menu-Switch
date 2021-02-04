@@ -10,14 +10,33 @@ import Lifx
 
 struct ContentView: View {
 	@EnvironmentObject var lifx: LifxState
-	//var dict = [String: Array<LifxDevice>]()
+	@State var client: LifxLanClient
 	
-	//For every device, append to a group using device.group
 	var body: some View {
-		return List(lifx.devices) { device in
-			VStack{
-				PowerSwitch(device: device, col: Color(device.color?.baseColor ?? NSColor(Color.white)))
+		Group {
+			if lifx.devices.count == 0 {
+				VStack {
+					Text("No devices Found!")
+					Text("Make sure you're connected to the same network.")
+				}
+				.padding()
+				.frame(maxWidth: .infinity, maxHeight: .infinity)
+				.multilineTextAlignment(.center)
+			} else {
+				List(lifx.devices) { device in
+					VStack {
+						PowerSwitch(device: device, col: Color(device.color?.baseColor ?? NSColor(Color.white)))
+					}
+				}
 			}
+			Button("Refresh", action: {
+				client.startRefreshing()
+				
+				//After 5 seconds, stop refreshing/updating.
+				DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+					client.stopRefreshing()
+				}
+			}).padding()
 		}
 	}
 }
@@ -48,55 +67,43 @@ struct PowerSwitch: View {
 								
 								self.col = newValue
 								self.device.color = HSBK(hue: hsb.h, saturation: hsb.s, brightness: hsb.v)
-							}))
+							}), supportsOpacity: false)
 		}
 		.padding()
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 	}
 }
 
-struct ContentView_Previews: PreviewProvider {
-	let client = try! LifxLanClient()
-	
-	init() {
-		client.startRefreshing()
-	}
-	
-    static var previews: some View {
-        ContentView()
-    }
-}
-
 func rgbToHsv(color: Color) -> (h:Float, s:Float, v:Float){
 	let r:Float = Float(color.cgColor?.components?[0] ?? 0)
 	let g:Float = Float(color.cgColor?.components?[1] ?? 0)
 	let b:Float = Float(color.cgColor?.components?[2] ?? 0)
-	let Max:Float = max(r, g, b)
-	let Min:Float = min(r, g, b)
+	let maxi:Float = max(r, g, b)
+	let mini:Float = min(r, g, b)
 	
 	//0-1
 	var h:Float = 0
 	var s:Float = 0
-	let v:Float = Max
+	let v:Float = maxi
 	
-	if Max == Min {
+	if maxi == mini {
 		h = 0.0
-	} else if Max == r && g >= b {
-		h = 60 * (g-b)/(Max-Min)
-	} else if Max == r && g < b {
-		h = 60 * (g-b)/(Max-Min) + 360
-	} else if Max == g {
-		h = 60 * (b-r)/(Max-Min) + 120
-	} else if Max == b {
-		h = 60 * (r-g)/(Max-Min) + 240
+	} else if maxi == r && g >= b {
+		h = 60 * (g - b) / (maxi - mini)
+	} else if maxi == r && g < b {
+		h = 60 * (g - b) / (maxi - mini) + 360
+	} else if maxi == g {
+		h = 60 * (b - r) / (maxi - mini) + 120
+	} else if maxi == b {
+		h = 60 * (r - g) / (maxi - mini) + 240
 	}
 	
-	h = h/360
+	h = h / 360
 	
-	if Max == 0 {
+	if maxi == 0 {
 		s = 0
 	} else {
-		s = (Max - Min)/Max
+		s = (maxi - mini) / maxi
 	}
 	
 	return (h, s, v)
