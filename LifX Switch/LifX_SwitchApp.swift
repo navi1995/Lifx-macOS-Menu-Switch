@@ -39,7 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		popover.contentViewController?.view = NSHostingView(rootView: contentView)
 		popover.contentViewController?.preferredContentSize = CGSize(width: 348, height: 400)
 		statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-		statusBarItem?.button?.title = "Lifx"
+		//statusBarItem?.button?.title = "􀛭"
+		statusBarItem?.button?.image = NSImage(systemSymbolName: "lightbulb", accessibilityDescription: "Lifx Bar")
 		statusBarItem?.button?.action = #selector(AppDelegate.togglePopover(_:))
 	}
 	
