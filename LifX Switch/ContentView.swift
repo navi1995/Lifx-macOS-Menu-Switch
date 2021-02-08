@@ -60,7 +60,7 @@ struct PowerSwitch: View {
 			Toggle("", isOn: isOn)
 				.toggleStyle(SwitchToggleStyle())
 				.disabled(device.powerOn == nil)
-			ColorPicker("", selection: Binding(
+			ColorPicker("Light Color", selection: Binding(
 							get: { self.col },
 							set: { (newValue) in
 								let hsb = rgbToHsv(color: newValue)
@@ -70,7 +70,6 @@ struct PowerSwitch: View {
 							}), supportsOpacity: false)
 		}
 		.padding()
-		.frame(maxWidth: .infinity, maxHeight: .infinity)
 	}
 }
 

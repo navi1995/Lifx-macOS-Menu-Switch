@@ -13,6 +13,8 @@
 		6C64F7B825C146680008B361 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C64F7B725C146680008B361 /* Preview Assets.xcassets */; };
 		6C64F7E125C14BB60008B361 /* Lifx in Frameworks */ = {isa = PBXBuildFile; productRef = 6C64F7E025C14BB60008B361 /* Lifx */; };
 		6C708F3525C3F13500BFC237 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C708F3425C3F13500BFC237 /* EmptyView.swift */; };
+		6CAF088325D1165D003345BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF088225D1165D003345BE /* README.md */; };
+		6CAF088625D1180E003345BE /* LifX Switch in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF088525D1180E003345BE /* LifX Switch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6C64F7B925C146680008B361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C64F7BA25C146680008B361 /* LifX_Switch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifX_Switch.entitlements; sourceTree = "<group>"; };
 		6C708F3425C3F13500BFC237 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		6CAF088225D1165D003345BE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6CAF088525D1180E003345BE /* LifX Switch */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "LifX Switch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				6C64F7BA25C146680008B361 /* LifX_Switch.entitlements */,
 				6C64F7B625C146680008B361 /* Preview Content */,
 				6C708F3425C3F13500BFC237 /* EmptyView.swift */,
+				6CAF088225D1165D003345BE /* README.md */,
+				6CAF088525D1180E003345BE /* LifX Switch */,
 			);
 			path = "LifX Switch";
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CAF088625D1180E003345BE /* LifX Switch in Resources */,
+				6CAF088325D1165D003345BE /* README.md in Resources */,
 				6C64F7B825C146680008B361 /* Preview Assets.xcassets in Resources */,
 				6C64F7B525C146680008B361 /* Assets.xcassets in Resources */,
 			);
@@ -195,6 +203,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -211,6 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -256,6 +266,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -281,9 +292,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "LifX Switch/LifX_Switch.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"LifX Switch/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "LifX Switch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,9 +317,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "LifX Switch/LifX_Switch.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"LifX Switch/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "LifX Switch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
