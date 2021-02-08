@@ -1,6 +1,6 @@
 # MacOS 11+ Lifx Menu Bar Switch Control
 
-![Demo](https://i.imgur.com/wJJConn.gif)
+![Demo](https://i.imgur.com/WjMzYuN.gif)
 
 A simple app that utilizes LIFX LAN capability all from the macOS Menu Bar
 
