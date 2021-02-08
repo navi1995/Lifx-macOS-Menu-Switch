@@ -45,6 +45,7 @@
 		6C64F7A425C146660008B361 = {
 			isa = PBXGroup;
 			children = (
+				6CAF088225D1165D003345BE /* README.md */,
 				6C64F7AF25C146660008B361 /* LifX Switch */,
 				6C64F7AE25C146660008B361 /* Products */,
 			);
@@ -68,7 +69,6 @@
 				6C64F7BA25C146680008B361 /* LifX_Switch.entitlements */,
 				6C64F7B625C146680008B361 /* Preview Content */,
 				6C708F3425C3F13500BFC237 /* EmptyView.swift */,
-				6CAF088225D1165D003345BE /* README.md */,
 				6CAF088525D1180E003345BE /* LifX Switch */,
 			);
 			path = "LifX Switch";
