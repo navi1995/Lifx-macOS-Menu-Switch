@@ -14,7 +14,6 @@
 		6C64F7E125C14BB60008B361 /* Lifx in Frameworks */ = {isa = PBXBuildFile; productRef = 6C64F7E025C14BB60008B361 /* Lifx */; };
 		6C708F3525C3F13500BFC237 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C708F3425C3F13500BFC237 /* EmptyView.swift */; };
 		6CAF088325D1165D003345BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF088225D1165D003345BE /* README.md */; };
-		6CAF088625D1180E003345BE /* LifX Switch in Resources */ = {isa = PBXBuildFile; fileRef = 6CAF088525D1180E003345BE /* LifX Switch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		6C64F7BA25C146680008B361 /* LifX_Switch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifX_Switch.entitlements; sourceTree = "<group>"; };
 		6C708F3425C3F13500BFC237 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		6CAF088225D1165D003345BE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		6CAF088525D1180E003345BE /* LifX Switch */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "LifX Switch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +67,6 @@
 				6C64F7BA25C146680008B361 /* LifX_Switch.entitlements */,
 				6C64F7B625C146680008B361 /* Preview Content */,
 				6C708F3425C3F13500BFC237 /* EmptyView.swift */,
-				6CAF088525D1180E003345BE /* LifX Switch */,
 			);
 			path = "LifX Switch";
 			sourceTree = "<group>";
@@ -145,7 +142,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CAF088625D1180E003345BE /* LifX Switch in Resources */,
 				6CAF088325D1165D003345BE /* README.md in Resources */,
 				6C64F7B825C146680008B361 /* Preview Assets.xcassets in Resources */,
 				6C64F7B525C146680008B361 /* Assets.xcassets in Resources */,

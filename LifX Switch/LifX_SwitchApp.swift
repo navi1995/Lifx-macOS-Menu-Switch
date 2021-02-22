@@ -38,7 +38,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		popover.contentViewController = NSViewController()
 		popover.contentViewController?.view = NSHostingView(rootView: contentView)
 		popover.contentViewController?.preferredContentSize = CGSize(width: 348, height: 400)
-		statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+		//statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+		statusBarItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
 		//statusBarItem?.button?.title = "􀛭"
 		statusBarItem?.button?.image = NSImage(systemSymbolName: "lightbulb", accessibilityDescription: "Lifx Bar")
 		statusBarItem?.button?.action = #selector(AppDelegate.togglePopover(_:))
@@ -47,6 +48,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@objc func showPopover(_ sender: AnyObject?) {
 		if let button = statusBarItem?.button {
 			popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+			//Sets app to be at the front, avoids issue with color picker dialogue not working.
+			NSApp.activate(ignoringOtherApps: true)
 		}
 	}
 	
