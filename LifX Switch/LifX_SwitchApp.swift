@@ -22,6 +22,7 @@ struct LifX_SwitchApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
 	var popover = NSPopover.init()
 	var statusBarItem: NSStatusItem?
+	var menu: NSMenu!
 	let client = try! LifxLanClient()
 	
 	override init() {

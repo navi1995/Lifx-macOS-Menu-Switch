@@ -29,14 +29,20 @@ struct ContentView: View {
 					}
 				}
 			}
-			Button("Refresh", action: {
-				client.startRefreshing()
-				
-				//After 5 seconds, stop refreshing/updating.
-				DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-					client.stopRefreshing()
-				}
-			}).padding()
+			HStack {
+				Button("Refresh", action: {
+					client.startRefreshing()
+					
+					//After 5 seconds, stop refreshing/updating.
+					DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+						client.stopRefreshing()
+					}
+				}).padding()
+				Button("Quit", action: {
+					//self.myWindow!.terminate()
+					NSApplication.shared.terminate(nil)
+				})
+			}
 		}
 	}
 }

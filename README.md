@@ -13,7 +13,7 @@ A simple app that utilizes LIFX LAN capability all from the macOS Menu Bar
 
 ## Installation
 
-Build in xCode and run Lifx Switch.app to install. 
+Build in xCode and run Lifx Switch.app to install, or hold OPTION while clicking LifX Switch.app, also storing it in the Applications folder 
 
 ## Usage
 
