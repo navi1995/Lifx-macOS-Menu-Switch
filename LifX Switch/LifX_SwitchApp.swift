@@ -48,6 +48,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	@objc func showPopover(_ sender: AnyObject?) {
 		if let button = statusBarItem?.button {
+			self.client.startRefreshing()
+			
+			//After 5 seconds, stop refreshing/updating.
+			DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+				self.client.stopRefreshing()
+			}
+			
 			popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
 			//Sets app to be at the front, avoids issue with color picker dialogue not working.
 			NSApp.activate(ignoringOtherApps: true)
